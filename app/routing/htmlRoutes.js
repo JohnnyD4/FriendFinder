@@ -36,9 +36,18 @@ app.get("/style.css", function(req, res) {
 	})
 })
 
+app.get("/survey", function(req, res) {
+
+	fs.readFile(publicSurvey, "utf8", function(err, data) {
+
+		res.writeHead(200, {"Content-type": "text/html"});
+		res.end(data);
+	})
+})
+
 app.listen(PORT, function() {
+	
 	console.log(PORT);
-	// console.log(fileName);
-	console.log(publicHome);
+
 
 })
