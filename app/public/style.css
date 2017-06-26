@@ -1,3 +1,7 @@
+body {
+	height: 100%;
+}
+
 .homeCover {
 	width: 60% !important;
 	background: rgba(220, 220, 220, .3);
