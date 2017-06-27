@@ -10,7 +10,7 @@ var app = express();
 
 var PORT = 3000;
 
-app.use(express.static('data'));
+app.use(express.static('../data'));
 
 // var htmlRouting = function() {
 
@@ -30,12 +30,9 @@ app.use(express.static('data'));
 
 	app.get("/", function(req, res) {
 		
-		fs.readFile(publicHome, "utf8", function (err, data) {
-				// if (err) throw err;
-
-			res.writeHead(200, {"Content-type": "text/html"});
-			res.end(data);
-		})
+		res.sendFile(publicHome);
+		// res.sendFile(publicStyle);
+		
 	})
 
 	// app.get("/images/cityBack.jpg", function(req, res) {
@@ -49,29 +46,19 @@ app.use(express.static('data'));
 
 	app.get("/style.css", function(req, res) {
 		
-		fs.readFile(publicStyle, "utf8", function (err, data) {
-				// if (err) throw err;
-
-			res.writeHead(200, {"Content-type": "text/css"});
-			res.end(data);
-		})
+		res.sendFile(publicStyle);
+				
 	})
 
 	app.get("/survey", function(req, res) {
 
-		fs.readFile(publicSurvey, "utf8", function(err, data) {
+		res.sendFile(publicSurvey);
 
-			res.writeHead(200, {"Content-type": "text/html"});
-			res.end(data);
-		})
 	})
 
 	app.get("/survey", function(req, res) {
 
-		fs.readFile(dataQ, "utf8", function(err, data) {
-
-			res.end;
-		})
+		res.sendFile(dataQ);
 	})
 
 // };
