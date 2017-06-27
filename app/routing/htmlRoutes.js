@@ -10,6 +10,8 @@ var app = express();
 
 var PORT = 3000;
 
+app.use(express.static('data'));
+
 // var htmlRouting = function() {
 
 
@@ -23,6 +25,8 @@ var PORT = 3000;
 	var dataQ = path.join(__dirname, '../data/questions.js');
 
 	// var publicImage = path.join(__dirname, '../images/cityBack.jpg');
+	
+	
 
 	app.get("/", function(req, res) {
 		
