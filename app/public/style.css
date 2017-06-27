@@ -16,6 +16,7 @@ body {
 .jumbotron {
 	background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");
 	background-size: cover;
+	height: 100%;
 
 }
 

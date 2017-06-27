@@ -10,40 +10,69 @@ var app = express();
 
 var PORT = 3000;
 
-var publicHome = path.join(__dirname, '../public/home.html');
+// var htmlRouting = function() {
 
-var publicSurvey = path.join(__dirname, '../public/survey.html');
 
-var publicStyle = path.join(__dirname, '../public/style.css');
 
-app.get("/", function(req, res) {
-	
-	fs.readFile(publicHome, "utf8", function (err, data) {
-			// if (err) throw err;
+	var publicHome = path.join(__dirname, '../public/home.html');
 
-		res.writeHead(200, {"Content-type": "text/html"});
-		res.end(data);
+	var publicSurvey = path.join(__dirname, '../public/survey.html');
+
+	var publicStyle = path.join(__dirname, '../public/style.css');
+
+	var dataQ = path.join(__dirname, '../data/questions.js');
+
+	// var publicImage = path.join(__dirname, '../images/cityBack.jpg');
+
+	app.get("/", function(req, res) {
+		
+		fs.readFile(publicHome, "utf8", function (err, data) {
+				// if (err) throw err;
+
+			res.writeHead(200, {"Content-type": "text/html"});
+			res.end(data);
+		})
 	})
-})
 
-app.get("/style.css", function(req, res) {
-	
-	fs.readFile(publicStyle, "utf8", function (err, data) {
-			// if (err) throw err;
+	// app.get("/images/cityBack.jpg", function(req, res) {
 
-		res.writeHead(200, {"Content-type": "text/css"});
-		res.end(data);
+	// 	fs.readFile(publicImage, "utf8", function(err, data) {
+
+	// 		res.writeHead(200, {"Content-type": "image/jpeg"});
+	// 		res.end(data);
+	// 	})
+	// })
+
+	app.get("/style.css", function(req, res) {
+		
+		fs.readFile(publicStyle, "utf8", function (err, data) {
+				// if (err) throw err;
+
+			res.writeHead(200, {"Content-type": "text/css"});
+			res.end(data);
+		})
 	})
-})
 
-app.get("/survey", function(req, res) {
+	app.get("/survey", function(req, res) {
 
-	fs.readFile(publicSurvey, "utf8", function(err, data) {
+		fs.readFile(publicSurvey, "utf8", function(err, data) {
 
-		res.writeHead(200, {"Content-type": "text/html"});
-		res.end(data);
+			res.writeHead(200, {"Content-type": "text/html"});
+			res.end(data);
+		})
 	})
-})
+
+	app.get("/survey", function(req, res) {
+
+		fs.readFile(dataQ, "utf8", function(err, data) {
+
+			res.end;
+		})
+	})
+
+// };
+
+// module.exports = htmlRouting;
 
 app.listen(PORT, function() {
 	
