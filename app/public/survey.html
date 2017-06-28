@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title>Travel Buddy Survey</title>
-	<script type="text/javascript" src="../data/questions.js"></script>
+	
+	<!-- <script type="text/javascript" src="../data/questions.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container homeCover">
@@ -10,19 +16,170 @@
 		<div class="col-xs-12">
 			<h1>Travel Buddy Survey</h1>
 			<h3>Rate the scores based off of your preferences and we will do the rest!</h3>
+			<hr>
+
 		</div>	
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-12 ">
 			<div class="questions">
 				
 			</div>
 			<div class="answers">
 				
 			</div>
+			<div class="friend">
+				<h3>You have a match!</h3>
+			</div>
+			
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+$(".friend").hide();
+
+	var counter = 0;
+
+	var qAnda = [
+		{	
+			'quest': '<h3>I travel often within a year</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:10%">10%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I want to go to the mountains</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:20%">20%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I want to go to the beaches</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">40%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">50%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">60%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">70%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">80%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">90%</div></div>'
+		},
+
+		{	
+			'quest': '<h3>I travel out of the country</h3>',
+			'ans1': '<input type: "radio" name = "1" value="1 never">',
+			'ans2': '<input type: "radio" name = "2" value="2 not often">',
+			'ans3': '<input type: "radio" name = "3" value="3 not sure">',
+			'ans4': '<input type: "radio" name = "4" value="4 often">',
+			'ans5': '<input type: "radio" name = "5" value="5 very often">',
+			'pBar':'<div class="progress"> <div class="progress-bar progress-bar-success progressBar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div></div>'
+		}
+	];
+
+	askQuestions();
+
+	function askQuestions() {
+
+		$(".questions").html(qAnda[counter].quest);
+		$(".answers").html(qAnda[counter].ans1);
+		$(".answers").append(qAnda[counter].ans2);
+		$(".answers").append(qAnda[counter].ans3);
+		$(".answers").append(qAnda[counter].ans4);
+		$(".answers").append(qAnda[counter].ans5);
+		$(".answers").append(qAnda[counter].pBar);
+	}
+
+	$(".answers").on("click", function () {
+
+		console.log(qAnda.length);
+		console.log(counter);
+
+		if (counter == qAnda.length - 2) {
+
+			$(".questions").hide();
+			$(".answers").hide();
+			$(".friend").show();
+			$(".friend").append("<h3>" + matchedUser + "</h3>");
+			$(".friend").append("<img>").css("src", matchedPhoto);
+
+		} else {
+
+			counter++;
+
+			askQuestions();
+
+		}
+
+	})
+
+
+</script>
 </body>
 </html>

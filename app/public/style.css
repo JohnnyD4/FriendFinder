@@ -1,24 +1,33 @@
 body {
 	height: 100%;
+	background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .homeCover {
 	width: 60% !important;
 	background: rgba(220, 220, 220, .3);
 	margin: 110px auto;
-	height: 300px;
+	height: 100%;
 	text-align: center;
 	border-radius: 15px;
 	color: black;
+	padding: 10px;
 
 }
 
-.jumbotron {
-	background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");
-	background-size: cover;
-	height: 100%;
+input {
+	margin: 20px 5px !important;
+	width: 80px;
+	cursor: pointer;
+	margin-bottom: 
+
 
 }
+
+
+
 
 .but {
 	margin: 20px;
