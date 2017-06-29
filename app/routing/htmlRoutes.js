@@ -1,21 +1,25 @@
-var express = require('express');
+// var express = require('express');
 
-var fs = require('fs');
+// var fs = require('fs');
 
 var path = require('path');
 
-// var pulicPath = require('../public/home.html');
+// // var pulicPath = require('../public/home.html');
 
-var app = express();
+// var app = express();
 
-var PORT = 3000;
+// var PORT = 3000;
 
-app.use(express.static('../data'));
+// app.use(express.static('../data'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({type: "application/vnd.api+json"}));
 
-// var htmlRouting = function() {
+module.exports = function(app) {
 
 
-
+// console.log(__dirname);
 	var publicHome = path.join(__dirname, '../public/home.html');
 
 	var publicSurvey = path.join(__dirname, '../public/survey.html');
@@ -24,12 +28,12 @@ app.use(express.static('../data'));
 
 	var dataQ = path.join(__dirname, '../data/questions.js');
 
-	// var publicImage = path.join(__dirname, '../images/cityBack.jpg');
+	var publicImage = path.join(__dirname, '../images/cityBack.jpg');
 	
 	
 
 	app.get("/", function(req, res) {
-		
+		// console.log(publicHome);
 		res.sendFile(publicHome);
 		// res.sendFile(publicStyle);
 		
@@ -54,6 +58,8 @@ app.use(express.static('../data'));
 
 		res.sendFile(publicSurvey);
 
+		// res.sendFile(dataQ);
+
 	})
 
 	app.get("/survey", function(req, res) {
@@ -61,13 +67,32 @@ app.use(express.static('../data'));
 		res.sendFile(dataQ);
 	})
 
-// };
+	// app.post()
 
-// module.exports = htmlRouting;
+	// app.get("/add", function(req, res) {
 
-app.listen(PORT, function() {
+	// })
+
+	// app.post("/survey", function(req, res) {
+
+	// console.log(req);
 	
-	console.log(PORT);
+
+	// 	// res.end("<h1>" + req.body.username + "</h1>");
+	// 	// let name = req.body;
+	// 	// res.end(`<!DOCTYPE html><html><head><title>Contact Form</title> </head><body>
+ //  //    Your name: ${name} <br/> 
+ //  //    Your email:  <br/> 
+ //  //    Your Message: <br/>
+ //  //   </body></html>`)
+	// })
+};
 
 
-})
+
+// app.listen(PORT, function() {
+	
+// 	console.log(PORT);
+
+
+// })

@@ -7,6 +7,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script> 
 </head>
 <body>
 <!-- <div class="jumbotron"> -->
@@ -23,10 +24,35 @@
 			<div class="col-xs-12">
 				<h4>Take a survey to match with friends who are looking to travel like you!</h4>
 
-				<a href="/survey"><button class="btn btn-success but">Take Survey</button></a>
+				<!-- <form method="POST" action="/survey"> -->
+					<input type="input" name="username" id="userID" value="" placeholder="Your Name">
+					<input class="imgInput" type="input" id="userImg" name="img" value="" placeholder="https://picture-link.jpg">
+					<a class="saveBtn" href="/survey"><button class="btn btn-success">Save</button></a>
+					<a class="takeSurvey" href="/survey"><button class="btn btn-success">Take Survey</button></a>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
 <!-- </div>	 -->
+<script type="text/javascript">
+$(".takeSurvey").hide();
+
+	$(".saveBtn").on("click", function(e) {
+		e.preventDefault();
+		$(".saveBtn").hide();
+		$(".takeSurvey").show();
+
+		var newUser = {
+
+			name: $("#userID").val().trim(),
+			imgId: $("#userImg").val().trim()
+		}
+		$.post("/api", newUser)
+		.done(function(data) {
+			// console.log(newUser);
+		})
+	})
+	
+</script>
 </body>
 </html>

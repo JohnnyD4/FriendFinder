@@ -1,6 +1,6 @@
 body {
 	height: 100%;
-	background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");
+	/*background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");*/
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -17,7 +17,19 @@ body {
 
 }
 
-input {
+.surveyCover {
+	width: 60% !important;
+	background: rgba(220, 220, 220, .3);
+	margin: 10px auto;
+	height: 100%;
+	text-align: center;
+	border-radius: 15px;
+	color: black;
+	padding: 10px;
+
+}
+
+#radioBtn {
 	margin: 20px 5px !important;
 	width: 80px;
 	cursor: pointer;
@@ -26,9 +38,22 @@ input {
 
 }
 
-
+.imgInput {
+	width: 300px;
+}
 
 
 .but {
-	margin: 20px;
+	margin: 20px !important;
+}
+
+.userInfo {
+	margin-left: 20px;
+	/*border: 1px solid black;*/
+	height: 300px;
+	width: 300px;
+}
+
+#imgStyle {
+	height: 200px;
 }
