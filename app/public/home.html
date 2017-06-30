@@ -44,12 +44,13 @@ $(".takeSurvey").hide();
 
 		var newUser = {
 
-			name: $("#userID").val().trim(),
-			imgId: $("#userImg").val().trim()
+			"name": $("#userID").val().trim(),
+			"imgId": $("#userImg").val().trim()
 		}
+		// console.log(newUser);
 		$.post("/api", newUser)
 		.done(function(data) {
-			// console.log(newUser);
+			console.log(newUser);
 		})
 	})
 	

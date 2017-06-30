@@ -1,6 +1,6 @@
 body {
 	height: 100%;
-	/*background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");*/
+	background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-14.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -52,6 +52,7 @@ body {
 	/*border: 1px solid black;*/
 	height: 300px;
 	width: 300px;
+	float: left;
 }
 
 #imgStyle {

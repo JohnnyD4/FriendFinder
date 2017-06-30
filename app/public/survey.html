@@ -164,7 +164,7 @@ $(document).ready(function() {
 
 	var ans = 0;
 
-	$.get("api", function(data) {
+	$.get("/api", function(data) {
 		userCounter = data.length - 1;
 		
 		console.log(data);
@@ -214,9 +214,16 @@ $(document).ready(function() {
 				newUser.push(userData);
 				newUser.push(a);
 
-				console.log(newUser);
+				newWhatever = {
+					"name": userData.name,
+					"imgId": userData.imgId,
+					"scores": a
+				};
 
-				$.post("/api", newUser)
+				// console.log(newWhatever);
+				
+
+				$.post("/api", newWhatever)
 				.done(function(data) {
 				console.log("work", data);
 				})
