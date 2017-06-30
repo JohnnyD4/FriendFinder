@@ -39,7 +39,8 @@ module.exports = function(app) {
 
 		res.json(newUser);
 
-		console.log(newUser);
+		// console.log(newUser);
+		console.log(users);
 	})
 
 }

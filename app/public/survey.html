@@ -98,7 +98,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>I travel within the country</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -108,7 +108,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>Traveling is a priority</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -118,7 +118,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>I set up an itinerary for my entire trip</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -128,7 +128,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>I stay in high end hotels and airBnBs</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -138,7 +138,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>I stay in hostels</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -148,7 +148,7 @@ $(document).ready(function() {
 		},
 
 		{	
-			'quest': '<h3>I travel out of the country</h3>',
+			'quest': '<h3>I love traveling!</h3>',
 			'ans1': '<input id="radioBtn" type: "radio" name = "1" value="1 never">',
 			'ans2': '<input id="radioBtn" type: "radio" name = "2" value="2 not often">',
 			'ans3': '<input id="radioBtn" type: "radio" name = "3" value="3 not sure">',
@@ -167,7 +167,7 @@ $(document).ready(function() {
 	$.get("/api", function(data) {
 		userCounter = data.length - 1;
 		
-		console.log(data);
+		
 		
 		var nameDiv = $("<h2>" + data[userCounter].name + "</h2>");
 
@@ -209,8 +209,7 @@ $(document).ready(function() {
 				$(".questions").hide();
 				$(".answers").hide();
 				$(".friend").show();
-				// $(".friend").append("<h3>" + matchedUser + "</h3>");
-				// $(".friend").append("<img>").css("src", matchedPhoto);
+
 				newUser.push(userData);
 				newUser.push(a);
 
@@ -221,7 +220,27 @@ $(document).ready(function() {
 				};
 
 				// console.log(newWhatever);
-				
+				// console.log(data[1][1].scores);
+				for (var i = 0; i < data.length; i++) {
+					
+					// for (var j = 0; j < newWhatever.scores.length; j++) {
+							var newString = newWhatever.scores.join();
+							var dataString = data[i][i].scores.join();
+
+							// console.log("new user" + newString);
+
+							// console.log("data" + dataString);
+						if(newString === dataString) {
+
+							console.log(data[i][i].name);
+							console.log(data[i][i].imgId);
+
+							$(".friend").append("<h3>" + data[i][i].name + "</h3>");
+							var friendImg = $("<img id='imgStyle'>").attr("src", data[i][i].imgId);	
+							$(".friend").append(friendImg);					
+						}
+					// }
+				}
 
 				$.post("/api", newWhatever)
 				.done(function(data) {
