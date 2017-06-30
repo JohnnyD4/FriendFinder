@@ -84,8 +84,38 @@
 				"3 not sure",
 				]
 			
-		}
+		},
+
+		{
+			
+				"name": "Ice Cube",
+				"imgId": "http://www.trbimg.com/img-58a75f37/turbine/sd-1487363965-41fh30p7mb-snap-photo/650/650x366",		
+				"scores": [
+				"2 not often",
+				"5 very often",
+				"1 never",
+				"3 not sure",
+				"4 often",		
+				]
+			
+		},
+
+		{
+			
+				"name": "Allen",
+				"imgId": "https://filmphage.files.wordpress.com/2013/05/the-hangover-part-3-zach-galifianakis.jpg",		
+				"scores": [
+				"1 never",
+				"3 not sure",
+				"4 often",
+				"2 not often",
+				"5 very often",
+				]
+			
+		},
+
 	 ];
+
 
 	// for (var i = 0; i < users.length; i++) 
 	// console.log(users[0]);
