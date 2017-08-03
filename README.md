@@ -1,10 +1,10 @@
 # FriendFinder
 An Application that allows a user to find a travel buddy for their next adventure!
 
-# Image
+![alt text](https://github.com/JohnnyD4/FriendFinder/blob/master/login.png)
 It takes in a users name and a profile picture for a unique experience
 
-# Image
+![alt text](https://github.com/JohnnyD4/FriendFinder/blob/master/progress.png)
 
 ## Things this app does
 1. It shows users information on the top left
@@ -12,4 +12,4 @@ It takes in a users name and a profile picture for a unique experience
 3. Provides a progress bar to let you know where you are at
 4. Displays another user who most closely matches your answers
 
-# Image
+![alt text](https://github.com/JohnnyD4/FriendFinder/blob/master/matched.png)
